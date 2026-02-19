@@ -6,14 +6,7 @@ export default function Hero() {
       <div className="text-xs mono text-muted uppercase" style={{ marginBottom: '1rem' }}>
         Technical Task Response &mdash; Kiz8 &middot; AI &middot; Agentics &middot; Architecture
       </div>
-      <h1 style={{
-        fontSize: '2.5rem',
-        lineHeight: 1.1,
-        marginBottom: '1rem',
-        textTransform: 'uppercase',
-        letterSpacing: '0.05em',
-        fontFamily: 'var(--font-mono)',
-      }}>
+      <h1 className="hero-title">
         Miscalibrated<br />
         Confidence<br />
         <span style={{ color: 'var(--text-muted)' }}>in Enterprise Pharma AI</span>
