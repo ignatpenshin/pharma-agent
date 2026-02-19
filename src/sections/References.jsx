@@ -4,32 +4,34 @@ function RefSection({ title, items }) {
   return (
     <div style={{ marginBottom: '2rem' }}>
       <h4 className="mono text-xs text-muted uppercase" style={{ marginBottom: '0.5rem' }}>{title}</h4>
-      <table className="ref-table">
-        <thead>
-          <tr>
-            <th>Paper</th>
-            <th style={{ width: '200px' }}>Link</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((item, i) => (
-            <tr key={i}>
-              <td>{item.paper}</td>
-              <td>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ref-link"
-                  style={{ borderBottom: '1px solid var(--accent-heat-dim)' }}
-                >
-                  {item.url.replace(/^https?:\/\//, '').substring(0, 35)}...
-                </a>
-              </td>
+      <div className="table-wrap">
+        <table className="ref-table">
+          <thead>
+            <tr>
+              <th>Paper</th>
+              <th style={{ width: '200px' }}>Link</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {items.map((item, i) => (
+              <tr key={i}>
+                <td>{item.paper}</td>
+                <td>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ref-link"
+                    style={{ borderBottom: '1px solid var(--accent-heat-dim)' }}
+                  >
+                    {item.url.replace(/^https?:\/\//, '').substring(0, 35)}...
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

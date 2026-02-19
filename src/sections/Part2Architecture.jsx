@@ -27,30 +27,32 @@ export default function Part2Architecture() {
         <Ref text="Kadavath et al., 2022" url="https://arxiv.org/abs/2207.05221" />.
       </p>
 
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th style={{ width: '140px' }}>Signal</th>
-            <th>Computation</th>
-            <th style={{ width: '180px' }}>Detects</th>
-            <th style={{ width: '150px' }}>Reference</th>
-          </tr>
-        </thead>
-        <tbody>
-          {SIGNALS.map(s => (
-            <tr key={s.name}>
-              <td><strong>{s.name}</strong></td>
-              <td>{s.computation}</td>
-              <td>{s.detects}</td>
-              <td>
-                {s.refs.map((r, i) => (
-                  <div key={i}><Ref text={r.text} url={r.url} /></div>
-                ))}
-              </td>
+      <div className="table-wrap">
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th style={{ width: '140px' }}>Signal</th>
+              <th>Computation</th>
+              <th style={{ width: '180px' }}>Detects</th>
+              <th style={{ width: '150px' }}>Reference</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {SIGNALS.map(s => (
+              <tr key={s.name}>
+                <td><strong>{s.name}</strong></td>
+                <td>{s.computation}</td>
+                <td>{s.detects}</td>
+                <td>
+                  {s.refs.map((r, i) => (
+                    <div key={i}><Ref text={r.text} url={r.url} /></div>
+                  ))}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <p className="content-p" style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '-0.5rem' }}>
         Source Agreement uses DeBERTa-v3<Footnote id="deberta" /> for NLI classification.

@@ -44,26 +44,28 @@ export default function Part2Zones() {
       </div>
 
       <h4 className="mono text-sm mt-4 mb-1 text-muted uppercase">Expected Distribution</h4>
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th>Zone</th>
-            <th>Cold Start</th>
-            <th>Mature</th>
-          </tr>
-        </thead>
-        <tbody>
-          {DISTRIBUTION.map(d => (
-            <tr key={d.zone} style={d.highlight ? { borderTop: '2px solid var(--line-dim)' } : {}}>
-              <td style={d.highlight ? { fontWeight: 500, color: 'var(--text-main)' } : {}}>
-                {d.zone}
-              </td>
-              <td>{d.cold}</td>
-              <td>{d.mature}</td>
+      <div className="table-wrap">
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Zone</th>
+              <th>Cold Start</th>
+              <th>Mature</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {DISTRIBUTION.map(d => (
+              <tr key={d.zone} style={d.highlight ? { borderTop: '2px solid var(--line-dim)' } : {}}>
+                <td style={d.highlight ? { fontWeight: 500, color: 'var(--text-main)' } : {}}>
+                  {d.zone}
+                </td>
+                <td>{d.cold}</td>
+                <td>{d.mature}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <p className="content-p" style={{ marginTop: '1rem' }}>
         Client constraint met: 7-10% routed to humans<Footnote id="hitl" /> at maturity (within the 5-10% budget).

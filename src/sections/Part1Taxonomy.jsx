@@ -52,49 +52,55 @@ export default function Part1Taxonomy() {
       </p>
 
       <h3 className="subsection-header">A. Retrieval Failures &mdash; The agent finds the wrong evidence<Footnote id="rag" /></h3>
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th style={{ width: '50px' }}>#</th>
-            <th style={{ width: '180px' }}>Mechanism</th>
-            <th>Description</th>
-            <th style={{ width: '100px' }}>Detect.</th>
-          </tr>
-        </thead>
-        <tbody>
-          {TAXONOMY.retrieval.map(item => <TaxRow key={item.id} item={item} />)}
-        </tbody>
-      </table>
+      <div className="table-wrap">
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th style={{ width: '50px' }}>#</th>
+              <th style={{ width: '180px' }}>Mechanism</th>
+              <th>Description</th>
+              <th style={{ width: '100px' }}>Detect.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {TAXONOMY.retrieval.map(item => <TaxRow key={item.id} item={item} />)}
+          </tbody>
+        </table>
+      </div>
 
       <h3 className="subsection-header">B. Reasoning Failures &mdash; The agent misuses correct evidence</h3>
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th style={{ width: '50px' }}>#</th>
-            <th style={{ width: '180px' }}>Mechanism</th>
-            <th>Description</th>
-            <th style={{ width: '100px' }}>Detect.</th>
-          </tr>
-        </thead>
-        <tbody>
-          {TAXONOMY.reasoning.map(item => <TaxRow key={item.id} item={item} />)}
-        </tbody>
-      </table>
+      <div className="table-wrap">
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th style={{ width: '50px' }}>#</th>
+              <th style={{ width: '180px' }}>Mechanism</th>
+              <th>Description</th>
+              <th style={{ width: '100px' }}>Detect.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {TAXONOMY.reasoning.map(item => <TaxRow key={item.id} item={item} />)}
+          </tbody>
+        </table>
+      </div>
 
       <h3 className="subsection-header">C. Epistemic Blindness &mdash; The agent doesn&rsquo;t know what it doesn&rsquo;t know</h3>
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th style={{ width: '50px' }}>#</th>
-            <th style={{ width: '180px' }}>Mechanism</th>
-            <th>Description</th>
-            <th style={{ width: '100px' }}>Detect.</th>
-          </tr>
-        </thead>
-        <tbody>
-          {TAXONOMY.epistemic.map(item => <TaxRow key={item.id} item={item} />)}
-        </tbody>
-      </table>
+      <div className="table-wrap">
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th style={{ width: '50px' }}>#</th>
+              <th style={{ width: '180px' }}>Mechanism</th>
+              <th>Description</th>
+              <th style={{ width: '100px' }}>Detect.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {TAXONOMY.epistemic.map(item => <TaxRow key={item.id} item={item} />)}
+          </tbody>
+        </table>
+      </div>
 
       <div className="callout" style={{ marginTop: '2rem' }}>
         <strong>Engineering ceiling:</strong> B4, A3, C9<Footnote id="autoregressive" /> have no reliable automated mitigation.
